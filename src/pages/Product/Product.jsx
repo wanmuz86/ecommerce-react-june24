@@ -3,7 +3,7 @@ import './Product.css'
 
 const Product = () => {
   return (
-    <div>Product</div>
+    <div className='container py-5'>Product</div>
   )
 }
 
