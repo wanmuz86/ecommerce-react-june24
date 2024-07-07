@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './Footer.css'
+
 const Footer = () => {
   return (
     <footer className='bg-dark text-light p-5'>
@@ -7,10 +9,10 @@ const Footer = () => {
       <div className='row'>
         <div className='col-3'>
           <ul className='list-unstyled'>
-            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>About Us</NavLink></li>
-            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Terms and Condition</NavLink></li>
-            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Privacy Policy</NavLink></li>
-            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Contact Us</NavLink></li>
+            <li><NavLink href="#">About Us</NavLink></li>
+            <li><NavLink to="#" >Terms and Condition</NavLink></li>
+            <li><NavLink to="#" >Privacy Policy</NavLink></li>
+            <li><NavLink to="#">Contact Us</NavLink></li>
           </ul>
         </div>
         <div className='col-3'>
