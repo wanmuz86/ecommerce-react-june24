@@ -1,10 +1,42 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
-    <div className='bg-dark text-light p-5 text-center'>
-        <p>&copy; 2024 - All right reserved</p>
-    </div>
+    <footer className='bg-dark text-light p-5'>
+<div className='container'>
+      <div className='row'>
+        <div className='col-3'>
+          <ul className='list-unstyled'>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>About Us</NavLink></li>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Terms and Condition</NavLink></li>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Privacy Policy</NavLink></li>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Contact Us</NavLink></li>
+          </ul>
+        </div>
+        <div className='col-3'>
+        <ul className='list-unstyled'>
+            <li><NavLink to="/categories/men's clothing" style={{ textDecoration: 'none', color: 'lightgray'}}>Men's Clothing</NavLink></li>
+            <li><NavLink  to="/categories/women's clothing" style={{ textDecoration: 'none', color: 'lightgray'}}>Women's Clothing</NavLink></li>
+            <li><NavLink  to="/categories/jewelery" style={{ textDecoration: 'none', color: 'lightgray'}}>Jewelery</NavLink></li>
+            <li><NavLink  to="/categories/electronics" style={{ textDecoration: 'none', color: 'lightgray'}}>Electronics</NavLink></li>
+          </ul>
+        </div>
+        <div className='col-3'>
+        <ul className='list-unstyled'>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Facebook</NavLink></li>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Instagram</NavLink></li>
+            <li><NavLink to="#" style={{ textDecoration: 'none', color: 'lightgray'}}>Twitter</NavLink></li>
+           
+          </ul>
+        </div>
+        <div className='col-3'>
+          <h6>ABC Sdn Bhd</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officia reiciendis </p>
+        </div>
+        </div>
+      </div>
+        <p className='text-center'>&copy; 2024 - All right reserved</p>
+    </footer>
   )
 }
 
