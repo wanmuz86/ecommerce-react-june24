@@ -1,7 +1,7 @@
 import React from 'react'
 import './Product.css'
 import { useParams } from 'react-router-dom'
-import { useFetch } from '../../libs/useFetch';
+import { useFetch } from '../../libs/hooks/useFetch';
 
 const Product = () => {
 
@@ -31,7 +31,7 @@ const Product = () => {
                   <h6>{data?.category}</h6>
                   <h6>{data?.rating.rate} ({data?.rating.count})</h6>
                   <p>{data?.description}</p>
-                  <button class="btn btn-primary">Buy Now</button>
+                  <button class="btn btn-primary">Add to Cart</button>
                 </div>
                 </div>
               </div>

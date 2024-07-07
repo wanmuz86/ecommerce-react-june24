@@ -29,7 +29,7 @@ const Header = () => {
 
           </ul>
           <div className="d-flex">
-            <NavLink className="btn btn-outline-warning" to="/cart">Cart</NavLink>
+            <NavLink className="btn btn-outline-warning" to="/cart">Cart (0)</NavLink>
           </div>
         </div>
       </div>

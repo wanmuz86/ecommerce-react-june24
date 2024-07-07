@@ -9,7 +9,8 @@ const ProductCard = ({ product }) => {
             <div className="card-body">
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">USD {product.price}</p>
-                <Link to={`/products/${product.id}`} className="btn btn-primary" style={{width:'100%'}}>Buy now</Link>
+                <button className='btn btn-primary mb-3' style={{width:'100%'}}>Add to Cart</button>
+                <Link to={`/products/${product.id}`} className="btn btn-outline-primary" style={{width:'100%'}}>More Info</Link>
             </div>
         </div>
     )

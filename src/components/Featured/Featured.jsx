@@ -1,4 +1,4 @@
-import { useFetch } from '../../libs/useFetch'
+import { useFetch } from '../../libs/hooks/useFetch'
 import ProductCard from '../ProductCard/ProductCard'
 import './Featured.css'
 
