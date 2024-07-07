@@ -12,6 +12,7 @@ import banner1 from './assets/banner1.jpg'
 import banner2 from './assets/banner2.jpg'
 import banner3 from './assets/banner3.jpg'
 
+import { CartProvider } from './libs/providers/CartProvider.jsx'
 // We use browserROuter as it is the latest one / recommended for today
 // It supports new features eg dataLoader
 
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
+  <CartProvider>
     <RouterProvider router={router}/>
+    </CartProvider>
 
 )

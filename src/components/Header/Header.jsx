@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../../libs/providers/CartProvider'
 
 const Header = () => {
+
+  const {state} = useCart()
   return (
     <nav className="navbar navbar-expand-lg bg-danger navbar-dark">
       <div className="container">
@@ -29,7 +32,7 @@ const Header = () => {
 
           </ul>
           <div className="d-flex">
-            <NavLink className="btn btn-outline-warning" to="/cart">Cart (0)</NavLink>
+            <NavLink className="btn btn-outline-warning" to="/cart">Cart ({state.cart.length})</NavLink>
           </div>
         </div>
       </div>
