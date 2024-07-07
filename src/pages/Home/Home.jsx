@@ -8,6 +8,7 @@ const Home = ({banner}) => {
     <>
     <Banner banner={banner}/>
     <div className='container py-5'>
+      <h3 className='mb-3'>Featured Products</h3>
       <Featured/>
     </div>
     </>
