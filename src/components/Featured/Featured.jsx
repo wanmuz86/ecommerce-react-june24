@@ -1,9 +1,10 @@
 import { useFetch } from '../../libs/useFetch'
+import ProductCard from '../ProductCard/ProductCard'
 import './Featured.css'
 
 import React from 'react'
 const Featured = () => {
-    const url = "https://fakestoreapi.com/products?limit=6"
+    const url = "https://fakestoreapi.com/products?limit=8"
 
     // Calling the created hook and execute it right away , 
     // Because the hook is created, useEffect will be called
@@ -19,13 +20,16 @@ const Featured = () => {
                     error ?
                         <h1>Something s wrong</h1>
                         :
-                        <ul>
+                        <div class="row">
                             {
                                 data?.map(val => (
-                                    <li key={val.id}>{val.title}</li>
+                                    <div className='col-3 g-3' key={val.id} >
+                                        <ProductCard product={val} />
+                                    </div>
+
                                 ))
                             }
-                        </ul>
+                        </div>
             }
         </div>
     )
