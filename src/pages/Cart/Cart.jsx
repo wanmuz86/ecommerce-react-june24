@@ -5,8 +5,8 @@ import CartItem from '../../components/CartItem/CartItem'
 import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-  const { state, dispatch } = useCart()
-  const  navigate  = useNavigate()
+  const { state, dispatch,totalPrice } = useCart()
+  const navigate = useNavigate()
 
   return (
     <div className='container py-3'>
@@ -22,13 +22,16 @@ const Cart = () => {
               }
             </div>
             <button className='btn btn-outline-danger' onClick={() => dispatch({ type: 'EMPTY_CART' })}>Empty Cart</button>
+            <hr />
+            <h5>Total Price : USD {totalPrice}</h5>
           </>
           :
           <>
-          <p>No item available in the cart. Start shopping now</p>
-          <button className='btn btn-primary' onClick={()=> navigate('/')}>Start Shopping</button>
+            <p>No item available in the cart. Start shopping now</p>
+            <button className='btn btn-primary' onClick={() => navigate('/')}>Start Shopping</button>
           </>
       }
+     
 
 
     </div>

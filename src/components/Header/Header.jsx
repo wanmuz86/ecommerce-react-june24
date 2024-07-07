@@ -4,7 +4,7 @@ import { useCart } from '../../libs/providers/CartProvider'
 
 const Header = () => {
 
-  const {state} = useCart()
+  const {totalItemsInCart} = useCart()
   return (
     <nav className="navbar navbar-expand-lg bg-danger navbar-dark">
       <div className="container">
@@ -32,7 +32,7 @@ const Header = () => {
 
           </ul>
           <div className="d-flex">
-            <NavLink className="btn btn-outline-warning" to="/cart">Cart ({state.cart.length})</NavLink>
+            <NavLink className="btn btn-outline-warning" to="/cart">Cart ({totalItemsInCart})</NavLink>
           </div>
         </div>
       </div>

@@ -89,11 +89,20 @@ const CartProvider = ({children}) => {
         }
     }
 
+
+    
     // We will create provider with the state and methods pass in the provider
     const [state, dispatch] = useReducer(cartReducer,initialState);
 
+    // We want to run an operation on the state/cart , "reduce" to get the total item in the cart, and to return it together in the provider
+    // so it is accessible by the component
+
+    const totalItemsInCart = state.cart.reduce((acc,val)=> acc+val.quantity, 0);
+    const totalPrice = state.cart.reduce((acc,val)=> acc + (val.quantity * val.item.price),0)
+
+
     return (
-        <CartContext.Provider value={{state, dispatch}}>
+        <CartContext.Provider value={{state, dispatch, totalItemsInCart, totalPrice}}>
             {children}
         </CartContext.Provider>
     )
