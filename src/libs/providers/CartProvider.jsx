@@ -45,6 +45,40 @@ const CartProvider = ({children}) => {
     
             case 'REMOVE_ITEM':
 
+            // Item is already in cart, I check first the index of the item
+
+            //item saved : {item:{id:,title, image, price}, quantity:1}
+            //payload sent: {item:{id:,title, image, price}, quantity:1}
+
+            const existingItemIndex = state.cart.findIndex(val => val.item.id === action.payload.id)
+
+            // If the quantity of the item is bigger than 1
+            // I will -1 the quantity of item
+
+            if (existingItemIndex > -1){
+                // Create the copy of the cart to do manipulation on it
+                const updatedCart = [...state.cart];
+                if (updatedCart[existingItemIndex].quantity > 1){
+                    updatedCart[existingItemIndex].quantity -= 1
+                    return {
+                        ...state,
+                        cart: updatedCart
+                    }
+                }
+                else {
+                     // If it is 1 than I need to remove the item from the list
+                    // filter -> remove from the cart
+                    return {
+                        ...state,
+                        cart: state.cart.filter(val=> val.item.id !== action.payload.id)
+                    }
+                }
+
+            }
+
+
+           
+
             case 'EMPTY_CART':
 
 
