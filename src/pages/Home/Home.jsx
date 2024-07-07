@@ -2,10 +2,10 @@ import React from 'react'
 import './Home.css'
 import Banner from '../../components/Banner/Banner'
 
-const Home = () => {
+const Home = ({banner}) => {
   return (
     <>
-    <Banner/>
+    <Banner banner={banner}/>
     <div className='container py-5'>Home</div>
     </>
   )
