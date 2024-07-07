@@ -11,6 +11,7 @@ const CartProvider = ({children}) => {
 
     const cartReducer = (state, action) =>
     {
+        console.log(action)
         switch (action.type) {
 
             case 'ADD_ITEM':
@@ -50,7 +51,7 @@ const CartProvider = ({children}) => {
             //item saved : {item:{id:,title, image, price}, quantity:1}
             //payload sent: {item:{id:,title, image, price}, quantity:1}
 
-            const existingItemIndex = state.cart.findIndex(val => val.item.id === action.payload.id)
+            const existingItemIndex = state.cart.findIndex(val => val.item.id === action.payload.item.id)
 
             // If the quantity of the item is bigger than 1
             // I will -1 the quantity of item
@@ -70,11 +71,12 @@ const CartProvider = ({children}) => {
                     // filter -> remove from the cart
                     return {
                         ...state,
-                        cart: state.cart.filter(val=> val.item.id !== action.payload.id)
+                        cart: state.cart.filter(val=> val.item.id !== action.payload.item.id)
                     }
                 }
 
             }
+            return state
            
             case 'EMPTY_CART':
                 return {
